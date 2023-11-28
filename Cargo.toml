@@ -1,2 +1,33 @@
-[workspace]
-members = ["kdeconnect", "winrt-toast", "windows-audio-manager"]
+[package]
+name = "winrt-toast"
+version = "0.1.2"
+edition = "2021"
+license = "MIT"
+authors = ["Harry Cheng <chengyuhui1@gmail.com>", "Reticivis"]
+description = "A toast notification library for Windows 10 and 11."
+keywords = ["notification", "windows", "toast", "notify"]
+categories = ["os::windows-apis", "gui"]
+repository = "https://github.com/HexCodeFFF/winrt-toast"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+scopeguard = "1.2.0"
+thiserror = "1.0.50"
+url = "2.5.0"
+
+[dependencies.windows]
+version = "0.52.0"
+features = [
+    "Data_Xml_Dom",
+    "Foundation",
+    "Globalization",
+    "UI_Notifications",
+    "Win32_System_Registry",
+    "Win32_Storage_FileSystem",
+    "Win32_Security",
+    "Win32_Foundation",
+]
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
